@@ -1,0 +1,21 @@
+function showMasks_CALLBACK(src,evnt,parameters)
+%showMasks_CALLBACK.m shows or hides masks
+%
+%INPUTS
+%frameAx - axes handle
+%
+%ASM 10/13
+
+%get parameters
+parameters = get(parameters.ROIFig,'UserData');
+
+if ~get(parameters.showMasks,'Value') %if just turned off
+    set(parameters.showMasks,'String','Show Masks');
+else
+    set(parameters.showMasks,'String','Hide Masks');
+end
+
+%store parameters
+set(parameters.ROIFig,'UserData',parameters);
+end
+
